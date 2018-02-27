@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B55B3C2C203EA69600E97469 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B3C2B203EA69500E97469 /* NetworkController.swift */; };
 		B5CD1B2C2039273200ED624F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B2B2039273200ED624F /* AppDelegate.swift */; };
-		B5CD1B2E2039273200ED624F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B2D2039273200ED624F /* ViewController.swift */; };
 		B5CD1B312039273200ED624F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CD1B2F2039273200ED624F /* Main.storyboard */; };
 		B5CD1B342039273200ED624F /* FashionApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B322039273200ED624F /* FashionApp.xcdatamodeld */; };
 		B5CD1B362039273200ED624F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CD1B352039273200ED624F /* Assets.xcassets */; };
 		B5CD1B392039273200ED624F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CD1B372039273200ED624F /* LaunchScreen.storyboard */; };
 		B5CD1B442039273200ED624F /* FashionAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B432039273200ED624F /* FashionAppTests.swift */; };
 		B5CD1B4F2039273200ED624F /* FashionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B4E2039273200ED624F /* FashionAppUITests.swift */; };
+		B5CD1B5D2039279200ED624F /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B5C2039279200ED624F /* signInVC.swift */; };
+		B5CD1B5F203927A200ED624F /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B5E203927A200ED624F /* signUpVC.swift */; };
+		B5CD1B61203927BC00ED624F /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B60203927BC00ED624F /* resetPasswordVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B55B3C2B203EA69500E97469 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		B5CD1B282039273200ED624F /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CD1B2B2039273200ED624F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5CD1B2D2039273200ED624F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5CD1B302039273200ED624F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5CD1B332039273200ED624F /* FashionApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FashionApp.xcdatamodel; sourceTree = "<group>"; };
 		B5CD1B352039273200ED624F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		B5CD1B4A2039273200ED624F /* FashionAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FashionAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CD1B4E2039273200ED624F /* FashionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionAppUITests.swift; sourceTree = "<group>"; };
 		B5CD1B502039273200ED624F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5CD1B5C2039279200ED624F /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
+		B5CD1B5E203927A200ED624F /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
+		B5CD1B60203927BC00ED624F /* resetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				B5CD1B2B2039273200ED624F /* AppDelegate.swift */,
-				B5CD1B2D2039273200ED624F /* ViewController.swift */,
 				B5CD1B2F2039273200ED624F /* Main.storyboard */,
 				B5CD1B352039273200ED624F /* Assets.xcassets */,
 				B5CD1B372039273200ED624F /* LaunchScreen.storyboard */,
 				B5CD1B3A2039273200ED624F /* Info.plist */,
 				B5CD1B322039273200ED624F /* FashionApp.xcdatamodeld */,
+				B5CD1B5C2039279200ED624F /* signInVC.swift */,
+				B5CD1B5E203927A200ED624F /* signUpVC.swift */,
+				B5CD1B60203927BC00ED624F /* resetPasswordVC.swift */,
+				B55B3C2B203EA69500E97469 /* NetworkController.swift */,
 			);
 			path = FashionApp;
 			sourceTree = "<group>";
@@ -262,9 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5CD1B2E2039273200ED624F /* ViewController.swift in Sources */,
+				B5CD1B5F203927A200ED624F /* signUpVC.swift in Sources */,
+				B5CD1B5D2039279200ED624F /* signInVC.swift in Sources */,
+				B55B3C2C203EA69600E97469 /* NetworkController.swift in Sources */,
 				B5CD1B2C2039273200ED624F /* AppDelegate.swift in Sources */,
 				B5CD1B342039273200ED624F /* FashionApp.xcdatamodeld in Sources */,
+				B5CD1B61203927BC00ED624F /* resetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

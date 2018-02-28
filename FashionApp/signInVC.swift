@@ -9,7 +9,8 @@
 import UIKit
 
 class signInVC: UIViewController {
-
+    let networkController = NetworkController()
+    var userToken = ""
     // text fields
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -25,6 +26,32 @@ class signInVC: UIViewController {
     // clicked sign in button
     @IBAction func signInBtn_click(_ sender: Any) {
         print("Sign in pressed")
+        // hide keyboard
+        self.view.endEditing(true)
+        // if textfields are empty
+        if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
+            // show alert message
+            let alert = UIAlertController(title: "Please", message: "fill in fields", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }
+        let url = "http://127.0.0.1:8080/api-token-auth/"
+        let login_info = ["username": usernameTxt.text!, "password": passwordTxt.text!]
+        // asynchonous closure
+        networkController.login(url, login_info: login_info) {userToken in
+            self.userToken = userToken
+            if self.userToken.isEmpty {
+                // show alert message
+                let alert = UIAlertController(title: "Login Failed", message: "Please enter the correct username and password!", preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
+            else {
+                // jump to home UI
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

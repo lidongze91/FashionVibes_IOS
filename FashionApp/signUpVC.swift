@@ -27,7 +27,7 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var scrollViewHeight:CGFloat = 0
     // keyboard frame size
     var keyboard = CGRect()
-    
+    let networkController = NetworkController()
     // default func
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,7 +119,7 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                          "password": passwordTxt.text!, "bio": bioTxt.text!,
                          "web": webTxt.text!, "full_name": fullnameTxt.text!]
         let url = "http://127.0.0.1:8080/profiles/userinfo/"
-        NetworkController.data_request(url, user_info: user_info)
+        networkController.data_request(url, user_info: user_info)
     }
     // clicked cancel
     @IBAction func cancelBtn_click(_ sender: Any) {

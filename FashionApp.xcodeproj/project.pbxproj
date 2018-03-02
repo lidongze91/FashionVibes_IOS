@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B55B3C2C203EA69600E97469 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B3C2B203EA69500E97469 /* NetworkController.swift */; };
+		B57055DE2048F44400863370 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57055DD2048F44400863370 /* bg.jpg */; };
+		B57055E02048F46500863370 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57055DF2048F44B00863370 /* Pacifico.ttf */; };
+		B579E4B62048F5F500252C0D /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = B579E4B52048F5F500252C0D /* bg2.png */; };
 		B5CD1B2C2039273200ED624F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B2B2039273200ED624F /* AppDelegate.swift */; };
 		B5CD1B312039273200ED624F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CD1B2F2039273200ED624F /* Main.storyboard */; };
 		B5CD1B342039273200ED624F /* FashionApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CD1B322039273200ED624F /* FashionApp.xcdatamodeld */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		B55B3C2B203EA69500E97469 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		B57055DD2048F44400863370 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		B57055DF2048F44B00863370 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		B579E4B52048F5F500252C0D /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		B5CD1B282039273200ED624F /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CD1B2B2039273200ED624F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5CD1B302039273200ED624F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,9 +88,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B57055DB2048E05400863370 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B57055DD2048F44400863370 /* bg.jpg */,
+				B579E4B52048F5F500252C0D /* bg2.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		B57055DC2048E09200863370 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B57055DF2048F44B00863370 /* Pacifico.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B5CD1B1F2039273200ED624F = {
 			isa = PBXGroup;
 			children = (
+				B57055DC2048E09200863370 /* Resources */,
+				B57055DB2048E05400863370 /* images */,
 				B5CD1B2A2039273200ED624F /* FashionApp */,
 				B5CD1B422039273200ED624F /* FashionAppTests */,
 				B5CD1B4D2039273200ED624F /* FashionAppUITests */,
@@ -245,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CD1B392039273200ED624F /* LaunchScreen.storyboard in Resources */,
+				B57055E02048F46500863370 /* Pacifico.ttf in Resources */,
 				B5CD1B362039273200ED624F /* Assets.xcassets in Resources */,
+				B579E4B62048F5F500252C0D /* bg2.png in Resources */,
+				B57055DE2048F44400863370 /* bg.jpg in Resources */,
 				B5CD1B312039273200ED624F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

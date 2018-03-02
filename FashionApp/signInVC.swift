@@ -16,12 +16,46 @@ class signInVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     // buttons
     @IBOutlet weak var signInBtn: UIButton!
-    @IBOutlet weak var SignUpBtn: UIButton!
+    @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var forgotBtn: UIButton!
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // check how many fonts are there
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
+        label.font = UIFont(name: "Pacifico", size: 35)
+        // assignment
+        label.frame = CGRect(x: 10, y: 80, width: self.view.frame.size.width-20, height: 50)
+        usernameTxt.frame = CGRect(x: 10, y: label.frame.origin.y+100,
+                                   width: self.view.frame.size.width-20, height: 30)
+        passwordTxt.frame = CGRect(x: 10, y: usernameTxt.frame.origin.y+40,
+                                   width: self.view.frame.size.width-20, height: 30)
+        forgotBtn.frame = CGRect(x: 20, y: passwordTxt.frame.origin.y+30,
+                                 width: self.view.frame.size.width-20, height: 30)
+        signInBtn.frame = CGRect(x: 20, y: forgotBtn.frame.origin.y+70,
+                                 width: self.view.frame.size.width/4, height: 30)
+        signInBtn.layer.cornerRadius = signInBtn.frame.size.width / 20
+        signUpBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width/4-20, y: signInBtn.frame.origin.y, width: self.view.frame.size.width/4, height: 30)
+        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.width / 20
 
-        // Do any additional setup after loading the view.
+        // tap to hide keyboard
+        let hideTap = UITapGestureRecognizer(target: self, action: #selector(signInVC.hideKeyboardTap(recognizer:)))
+        hideTap.numberOfTapsRequired = 1
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(hideTap)
+        
+        // background
+        let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        bg.image = UIImage(named: "bg.jpg")
+        bg.layer.zPosition = -1
+        self.view.addSubview(bg)
     }
     // clicked sign in button
     @IBAction func signInBtn_click(_ sender: Any) {
@@ -52,6 +86,9 @@ class signInVC: UIViewController {
                 // jump to home UI
             }
         }
+    }
+    @objc func hideKeyboardTap(recognizer : UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -31,14 +31,18 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     // default func
     override func viewDidLoad() {
         super.viewDidLoad()
+        let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        bg.image = UIImage(named: "bg.jpg")
+        bg.layer.zPosition = -1
+        self.view.addSubview(bg)
         //scrollView frame size
         scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width,
                                   height: self.view.frame.height)
         scrollView.contentSize.height = self.view.frame.height
         scrollViewHeight = scrollView.frame.size.height
         // check notification if keyboard is shown or not
-        NSNotification.addObserver(self, forKeyPath: "showKeyboard:", context:nil)
-        NSNotification.addObserver(self, forKeyPath: "hideKeyboard:", context:nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(signUpVC.showKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(signUpVC.hideKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // declare hide keyboard tap
         let hideTap = UITapGestureRecognizer(target: self, action: #selector(signUpVC.hideKeyboardTap(recognizer:)))
         hideTap.numberOfTapsRequired = 1
@@ -54,6 +58,22 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         avaTap.numberOfTapsRequired = 1
         avaImg.isUserInteractionEnabled = true
         avaImg.addGestureRecognizer(avaTap)
+        
+        // alignment
+        avaImg.frame = CGRect(x: self.view.frame.size.width / 2 - 40, y: 50, width: 80, height: 80)
+        usernameTxt.frame = CGRect(x: 10, y: avaImg.frame.origin.y + 90, width: self.view.frame.size.width - 20, height: 30)
+        passwordTxt.frame = CGRect(x: 10, y: usernameTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
+        repeatPassword.frame = CGRect(x: 10, y: passwordTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
+        emailTxt.frame = CGRect(x: 10, y: repeatPassword.frame.origin.y + 60, width: self.view.frame.size.width - 20, height: 30)
+        webTxt.frame = CGRect(x: 10, y: emailTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
+        fullnameTxt.frame = CGRect(x: 10, y: webTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
+        bioTxt.frame = CGRect(x: 10, y: fullnameTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
+
+        signUpBtn.frame = CGRect(x: 20, y: bioTxt.frame.origin.y + 50, width: self.view.frame.size.width / 4, height: 30)
+        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.width / 20
+
+        cancelBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width / 4 - 20, y: signUpBtn.frame.origin.y, width: self.view.frame.size.width / 4, height: 30)
+        cancelBtn.layer.cornerRadius = cancelBtn.frame.size.width / 20
         // Do any additional setup after loading the view.
     }
     // call picker to select image
@@ -74,18 +94,18 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.view.endEditing(true)
     }
     // show keyboard
-    func showKeyboard(notification: NSNotification) {
+    @objc func showKeyboard(notification: NSNotification) {
         print("keyboard is showing")
         // define keyboard size
         keyboard = ((notification.userInfo?[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue)
         // move up UI
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.4, animations: { () -> Void in
             self.scrollView.frame.size.height -= self.keyboard.height
             })
     }
-    func hideKeyboard(notification: NSNotification) {
+    @objc func hideKeyboard(notification: NSNotification) {
         // move down UI
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.4, animations: { () -> Void in
             self.scrollView.frame.size.height = self.view.frame.height
         })
     }
@@ -123,7 +143,8 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     // clicked cancel
     @IBAction func cancelBtn_click(_ sender: Any) {
-        print("cancel pressed")
+        // hide keyboard
+        self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
     

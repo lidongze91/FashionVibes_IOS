@@ -18,10 +18,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-    <key>http://127.0.0.1:8080/</key>
-    <dict>
-        <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-        <true/>
-    </dict>
+	<key>http://127.0.0.1:8080/</key>
+	<dict>
+		<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

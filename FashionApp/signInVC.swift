@@ -10,7 +10,7 @@ import UIKit
 
 class signInVC: UIViewController {
     let networkController = NetworkController()
-    var userToken = ""
+    static var userToken = ""
     // text fields
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -74,8 +74,8 @@ class signInVC: UIViewController {
         let login_info = ["username": usernameTxt.text!, "password": passwordTxt.text!]
         // asynchonous closure
         networkController.login(url, login_info: login_info) {userToken in
-            self.userToken = userToken
-            if self.userToken.isEmpty {
+            signInVC.userToken = userToken
+            if signInVC.userToken.isEmpty {
                 // show alert message
                 let alert = UIAlertController(title: "Login Failed", message: "Please enter the correct username and password!", preferredStyle: UIAlertControllerStyle.alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
@@ -84,6 +84,14 @@ class signInVC: UIViewController {
             }
             else {
                 // jump to home UI
+                //self.performSegue(withIdentifier: "HomeVC", sender: nil)
+                // remember user or save in App Memeory did the user login or not
+                UserDefaults.standard.set(signInVC.userToken, forKey: "Token")
+                UserDefaults.standard.synchronize()
+                
+                // call login function from AppDelegate.swift class
+                let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.login()
             }
         }
     }

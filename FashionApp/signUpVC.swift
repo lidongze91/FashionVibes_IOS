@@ -139,7 +139,7 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                          "password": passwordTxt.text!, "bio": bioTxt.text!,
                          "web": webTxt.text!, "full_name": fullnameTxt.text!]
         let url = "http://127.0.0.1:8080/profiles/userinfo/"
-        networkController.data_request(url, user_info: user_info)
+        networkController.signup(url, user_info: user_info)
     }
     // clicked cancel
     @IBAction func cancelBtn_click(_ sender: Any) {

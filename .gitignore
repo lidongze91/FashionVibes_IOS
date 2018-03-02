@@ -249,7 +249,8 @@ xcuserdata/
 # We're using source-control, so this is a "feature" that we do not want!
 
 *.moved-aside
-
+*.htm
+*.html
 ####
 # OPTIONAL: Some well-known tools that people use side-by-side with Xcode / iOS development
 #
